@@ -128,7 +128,7 @@ $
 To verify that package resolution succeeds when using SCM references, do the following:
 
 ```
-$ cd sm
+$ cd scm
 $ swift package resolve
 Fetching https://github.com/google/gtm-session-fetcher.git from cache
 Fetched https://github.com/google/gtm-session-fetcher.git from cache (0.45s)
