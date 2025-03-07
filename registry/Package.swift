@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "VPrefix",
+    name: "DependencyFirebaseRegistry",
     products: [
         .library(
             name: "VPrefix",
@@ -11,14 +11,16 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(id: "google.gtm-session-fetcher", from: "4.4.0"),
+        .package(id: "firebase.firebase-ios-sdk", exact: "11.9.0"),
     ],
     targets: [
         .target(
-	    name: "VPrefix",
-	    dependencies: [
-	        .product(name: "GTMSessionFetcher", package: "google.gtm-session-fetcher"),
-	    ]
-	),
+            name: "VPrefix",
+            dependencies: [
+                .product(name: "FirebaseRemoteConfig", package: "firebase.firebase-ios-sdk"),
+                .product(name: "FirebaseCrashlytics", package: "firebase.firebase-ios-sdk"),
+                .product(name: "FirebasePerformance", package: "firebase.firebase-ios-sdk"),
+            ]
+        ),
     ]
 )
